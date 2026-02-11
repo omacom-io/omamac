@@ -12,7 +12,7 @@ brew install font-jetbrains-mono-nerd-font
 brew install tailscale
 
 # Install GUI applications via cask
-brew install --cask google-chrome dropbox spotify signal whatsapp obsidian claude-code
+brew install --cask 1password google-chrome dropbox spotify signal whatsapp obsidian claude-code
 
 # Install Alacritty manually from GitHub releases
 bash ./install/alacritty.sh
