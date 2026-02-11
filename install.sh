@@ -35,3 +35,6 @@ cp ./config/tmux.conf ~/.config/tmux/tmux.conf
 
 mkdir -p .config/git
 cp ./config/git.conf ~/.config/git/config
+
+# Turn off all the conflicting default Apple keybindings
+bash ./config/hotkeys.sh
