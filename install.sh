@@ -7,7 +7,7 @@ brew install bash
 chsh -s "/opt/homebrew/bin/bash"
 
 # Install basic tools
-brew install tmux mise starship zoxide eza
+brew install tmux mise starship zoxide eza aerospace font-jetbrains-mono-nerd-font
 
 # Install basic dev envs
 mise settings ruby.compile=false
