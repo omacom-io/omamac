@@ -38,3 +38,6 @@ cp ./config/git.conf ~/.config/git/config
 
 # Turn off all the conflicting default Apple keybindings
 bash ./config/hotkeys.sh
+
+# Configure dock position and autohide
+bash ./config/dock.sh
