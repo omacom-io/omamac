@@ -7,7 +7,12 @@ brew install bash
 chsh -s "/opt/homebrew/bin/bash"
 
 # Install basic tools
-brew install tmux mise starship zoxide eza aerospace font-jetbrains-mono-nerd-font
+brew install aerospace tmux mise opencode lazygit starship zoxide eza jq gum
+brew install font-jetbrains-mono-nerd-font
+brew install tailscale
+
+# Install GUI applications via cask
+brew install --cask dropbox spotify signal whatsapp obsidian claude-code
 
 # Install Alacritty manually from GitHub releases
 bash ./install/alacritty.sh
