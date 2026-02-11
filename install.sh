@@ -25,7 +25,9 @@ mise use -g node
 # Copy configs
 mkdir -p .config/
 cp ./config/bashrc ~/.bashrc
-cp ./config/aerospace.toml ~/.aerospace.toml
+
+mkdir -p .config/aerospace
+cp ./config/aerospace.toml ~/.config/aerospace/aerospace.toml
 
 mkdir -p .config/alacritty
 cp ./config/alacritty.toml ~/.config/alacritty/alacritty.toml
