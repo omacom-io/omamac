@@ -19,14 +19,14 @@ download() {
   fi
 }
 
-rexec() {
-  download $1 | bash
+section() {
+  echo e "\n==> $1\n"
 }
 
-section() {
-  echo
-  echo "==> $1"
-  echo
+config() {
+  mkdir -p "$(dirname "$3")"
+  download "$2" >"$3"
+  echo "✓ $1"
 }
 
 if ! command -v brew >/dev/null 2>&1; then
@@ -40,7 +40,7 @@ download Brewfile | brew bundle --file=-
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
-rexec install/alacritty.sh
+download install/alacritty.sh | bash
 
 # Install basic dev envs
 section "Installing mise envs..."
@@ -61,34 +61,20 @@ fi
 
 # Copy configs
 section "Configuring tools..."
-mkdir -p "$HOME/.config"
 
-download config/zshrc >"$HOME/.zshrc"
-echo '[[ -f ~/.zshrc ]] && source ~/.zshrc' >"$HOME/.zprofile"
-echo "✓ Zsh config"
+config "Zshrc" config/zshrc "$HOME/.zshrc"
+config "Zshprofile" config/zprofile "$HOME/.zprofile"
 
-mkdir -p "$HOME/.config/aerospace"
-download config/aerospace.toml >"$HOME/.config/aerospace/aerospace.toml"
+config "Alacritty" config/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
+config "Ghostty" config/ghostty.conf "$HOME/.config/ghostty/config"
+config "Starship" config/starship.toml "$HOME/.config/starship.toml"
+config "Tmux" config/tmux.conf "$HOME/.config/tmux/tmux.conf"
+
+config "Aerospace" config/aerospace.toml "$HOME/.config/aerospace/aerospace.toml"
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' >/dev/null 2>&1 || true
-echo "✓ Aerospace"
 
-mkdir -p "$HOME/.config/alacritty"
-download config/alacritty.toml >"$HOME/.config/alacritty/alacritty.toml"
-echo "✓ Alacritty"
-
-mkdir -p "$HOME/.config/ghostty"
-download config/ghostty.conf >"$HOME/.config/ghostty/config"
-echo "✓ Ghostty"
-
-download config/starship.toml >"$HOME/.config/starship.toml"
-echo "✓ Starship"
-
-mkdir -p "$HOME/.config/tmux"
-download config/tmux.conf >"$HOME/.config/tmux/tmux.conf"
-echo "✓ Tmux"
-
-rexec config/macos/dock.sh
-rexec config/macos/hotkeys.sh
+download config/macos/dock.sh | bash
+download config/macos/hotkeys.sh | bash
 echo "✓ macOS"
 
 section "Finished!"
