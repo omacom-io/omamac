@@ -40,12 +40,12 @@ brew install bash
 
 # Install basic tools
 section "Installing brew packages..."
-brew install aerospace tmux mise opencode lazygit starship zoxide eza jq gum
-brew install font-jetbrains-mono-nerd-font
-brew install tailscale
+brew install aerospace tmux mise opencode lazygit starship zoxide eza jq gum || true
+brew install font-jetbrains-mono-nerd-font || true
+brew install tailscale || true
 
 # Install GUI applications via cask
-brew install --cask 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code
+brew install --cask 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code || true
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
