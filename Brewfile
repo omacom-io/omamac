@@ -14,6 +14,7 @@ brew "zoxide"
 brew "eza"
 brew "jq"
 brew "gum"
+brew "gh"
 brew "tailscale"
 
 # Fonts
@@ -30,3 +31,4 @@ cask "whatsapp"
 cask "obsidian"
 cask "claude-code"
 cask "raycast"
+cask "zoom"
