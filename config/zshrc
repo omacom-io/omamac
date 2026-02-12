@@ -37,7 +37,6 @@ n() { if [[ $# -eq 0 ]]; then nvim .; else nvim "$@"; fi; }
 alias g='git'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
-alias gcad='git commit -a --amend'
 
 # Init
 eval "$(mise activate zsh)"
