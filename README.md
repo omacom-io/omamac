@@ -5,7 +5,7 @@ A poor man's [Omarchy](https://omarchy.org) on macOS using [Aerospace](https://n
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/omacom-io/omamac/master/install.sh | bash
+curl -fsSL https://omamac.org/install | bash
 ```
 
 ## What it sets up
