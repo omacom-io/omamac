@@ -37,7 +37,6 @@ fi
 # Change from zsh to bash
 section "Installing bash..."
 brew install bash
-chsh -s "/opt/homebrew/bin/bash"
 
 # Install basic tools
 section "Installing brew packages..."
@@ -93,3 +92,5 @@ echo "✓ Tmux"
 rexec config/macos/dock.sh
 rexec config/macos/hotkeys.sh
 echo "✓ macOS"
+
+echo 'Now run: chsh -s "/opt/homebrew/bin/bash"'
