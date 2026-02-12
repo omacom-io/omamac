@@ -60,16 +60,16 @@ if [[ ! -f $HOME/.config/git/config ]]; then
 fi
 
 # Copy configs
-section "Configuring tools..."
+section "Configuring shell..."
 
 config "Zshrc" config/zshrc "$HOME/.zshrc"
 config "Zshprofile" config/zprofile "$HOME/.zprofile"
-
-config "Alacritty" config/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
-config "Ghostty" config/ghostty.conf "$HOME/.config/ghostty/config"
 config "Starship" config/starship.toml "$HOME/.config/starship.toml"
 config "Tmux" config/tmux.conf "$HOME/.config/tmux/tmux.conf"
 
+section "Configuring apps..."
+config "Alacritty" config/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
+config "Ghostty" config/ghostty.conf "$HOME/.config/ghostty/config"
 config "Aerospace" config/aerospace.toml "$HOME/.config/aerospace/aerospace.toml"
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' >/dev/null 2>&1 || true
 
