@@ -48,7 +48,7 @@ fi
 
 # Install basic tools
 section "Installing core packages..."
-brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font
+brew_install aerospace tmux mise opencode lazygit starship zoxide eza bat jq gum font-jetbrains-mono-nerd-font
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
