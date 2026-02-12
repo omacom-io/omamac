@@ -46,13 +46,9 @@ if ! command -v brew >/dev/null 2>&1; then
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 fi
 
-# Change from zsh to bash
-section "Installing bash..."
-brew install bash
-
 # Install basic tools
 section "Installing core packages..."
-brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font
+brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font bash
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
@@ -77,8 +73,14 @@ fi
 # Copy configs
 section "Configuring tools..."
 mkdir -p "$HOME/.config/"
-download config/bashrc >"$HOME/.bashrc"
-echo "✓ Bash"
+if [[ -n "$ZSH_VERSION" ]]; then
+  download config/shellrc >"$HOME/.zshrc"
+  echo '[[ -f ~/.zshrc ]] && source ~/.zshrc' >"$HOME/.zprofile"
+else
+  download config/shellrc >"$HOME/.bashrc"
+  echo '[[ -f ~/.bashrc ]] && source ~/.bashrc' >"$HOME/.bash_profile"
+fi
+echo "✓ Shell configs"
 
 mkdir -p "$HOME/.config/aerospace"
 download config/aerospace.toml >"$HOME/.config/aerospace/aerospace.toml"
