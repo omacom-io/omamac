@@ -1,6 +1,6 @@
 # Omamac
 
-A poor man's Omarchy on macOS using Aerospace instead of Hyprland, but with the same terminal setup and most of the basic applications. Offered for those stuck temporarily on a mac, so they can get a simulacrum of the real thing.
+A poor man's [Omarchy](https://omarchy.org) on macOS using [Aerospace](https://nikitabobko.github.io/AeroSpace/guide) instead of [Hyprland](https://hypr.land/), but with the same terminal setup and most of the basic applications. Offered for those stuck temporarily on a mac, so they can get a simulacrum of the real thing.
 
 ## Install
 
