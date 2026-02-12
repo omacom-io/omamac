@@ -68,6 +68,7 @@ if [[ ! -f $HOME/.config/git/config ]]; then
   GIT_EMAIL=$(gum input --placeholder "your@email.com" --prompt "Git email: " </dev/tty)
 
   download config/git.conf | sed "s/{{GIT_NAME}}/${GIT_NAME}/g; s/{{GIT_EMAIL}}/${GIT_EMAIL}/g" >"$HOME/.config/git/config"
+  echo "✓ Git config"
 fi
 
 # Copy configs
