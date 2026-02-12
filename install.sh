@@ -73,7 +73,8 @@ fi
 
 # Copy configs
 section "Configuring tools..."
-mkdir -p "$HOME/.config/"
+mkdir -p "$HOME/.config"
+
 download config/zshrc >"$HOME/.zshrc"
 echo '[[ -f ~/.zshrc ]] && source ~/.zshrc' >"$HOME/.zprofile"
 echo "✓ Zsh config"
