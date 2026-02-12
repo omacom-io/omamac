@@ -82,7 +82,6 @@ mkdir -p "$HOME/.config/alacritty"
 download config/alacritty.toml >"$HOME/.config/alacritty/alacritty.toml"
 echo "✓ Alacritty"
 
-mkdir -p "$HOME/.config"
 download config/starship.toml >"$HOME/.config/starship.toml"
 echo "✓ Starship"
 
