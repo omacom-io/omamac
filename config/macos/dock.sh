@@ -14,5 +14,3 @@ defaults write com.apple.dock tilesize -int 43
 
 # Restart dock to apply changes
 killall Dock
-
-echo "Dock configured: positioned on right with autohide enabled"

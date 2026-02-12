@@ -37,6 +37,3 @@ defaults write -g NSUserKeyEquivalents -dict-add 'Minimize All' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Hide' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Hide Others' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Zoom' '\0'
-
-echo "Mission Control and window management hotkeys disabled."
-echo "Log out and back in for changes to take effect."
