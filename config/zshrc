@@ -6,8 +6,6 @@ export EDITOR="nvim"
 # Eza (https://eza.rocks/)
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -a'
-alias lt='eza --tree --level=2 --long --icons --git'
-alias lta='lt -a'
 
 # Smart cd (https://github.com/ajeetdsouza/zoxide)
 alias cd="zd"
