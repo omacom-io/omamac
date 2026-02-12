@@ -113,7 +113,3 @@ brew_install tailscale
 
 section "Finished!"
 echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
-
-if [[ "$SHELL" != */bash ]]; then
-  echo 'Now change to bash: chsh -s "/opt/homebrew/bin/bash"'
-fi
