@@ -12,10 +12,10 @@ curl -fsSL https://omamac.org/install | bash
 
 - **Window Manager**: Aerospace (tiling window manager)
 - **Terminal**: Alacritty + tmux
-- **Shell**: Bash (switches from zsh) with starship prompt, fzf, eza, zoxide, gum, jq
-- **Editors**: opencode, claude-code, Obsidian
-- **Dev tools**: mise (Ruby, Node.js), lazygit, docker
-- **Apps**: 1Password, Google Chrome, Dropbox, Spotify, Signal, WhatsApp
+- **Shell**: Starship prompt, fzf, eza, zoxide, gum, jq
+- **Editors**: nvim, opencode, claude-code
+- **Dev tools**: mise (Ruby, Node.js), docker, lazygit, lazydocker
+- **Apps**: 1Password, Obsidian, Google Chrome, Dropbox, Spotify, Signal, WhatsApp
 - **Networking**: Tailscale
 - **Git**: Helpful aliases and config
 - **macOS**: Disables conflicting default keybindings, configures dock
