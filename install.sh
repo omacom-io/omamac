@@ -104,4 +104,9 @@ section "Install extra packages"
 brew_cask_install 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code
 brew_install tailscale
 
-echo 'Now run: chsh -s "/opt/homebrew/bin/bash"'
+section "Finished!"
+echo "✓ System ready to use"
+
+if [[ "$SHELL" != */bash ]]; then
+  echo 'Now run: chsh -s "/opt/homebrew/bin/bash"'
+fi
