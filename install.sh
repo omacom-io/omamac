@@ -107,6 +107,7 @@ brew_install tailscale
 
 section "Finished!"
 echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
+echo "Tip: Add Cmd + Space as the hotkey when Raycast starts."
 
 if [[ "$SHELL" != */bash ]]; then
   echo 'Now run: chsh -s "/opt/homebrew/bin/bash"'
