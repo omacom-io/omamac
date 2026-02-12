@@ -1,13 +1,6 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="./bin:/usr/local/bin:$PATH"
 
-# Detect shell (default to bash for compatibility)
-if [[ -n "$ZSH_VERSION" ]]; then
-  CURRENT_SHELL="zsh"
-else
-  CURRENT_SHELL="bash"
-fi
-
 # Eza (https://eza.rocks/)
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -a'
@@ -51,6 +44,6 @@ alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
 
 # Init
-eval "$(mise activate $CURRENT_SHELL)"
-eval "$(starship init $CURRENT_SHELL)"
-eval "$(zoxide init $CURRENT_SHELL)"
+eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 set -euo pipefail
 
 echo
@@ -48,7 +48,7 @@ fi
 
 # Install basic tools
 section "Installing core packages..."
-brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font bash
+brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
@@ -73,14 +73,9 @@ fi
 # Copy configs
 section "Configuring tools..."
 mkdir -p "$HOME/.config/"
-if [[ -n "$ZSH_VERSION" ]]; then
-  download config/shellrc >"$HOME/.zshrc"
-  echo '[[ -f ~/.zshrc ]] && source ~/.zshrc' >"$HOME/.zprofile"
-else
-  download config/shellrc >"$HOME/.bashrc"
-  echo '[[ -f ~/.bashrc ]] && source ~/.bashrc' >"$HOME/.bash_profile"
-fi
-echo "✓ Shell configs"
+download config/zshrc >"$HOME/.zshrc"
+echo '[[ -f ~/.zshrc ]] && source ~/.zshrc' >"$HOME/.zprofile"
+echo "✓ Zsh config"
 
 mkdir -p "$HOME/.config/aerospace"
 download config/aerospace.toml >"$HOME/.config/aerospace/aerospace.toml"
