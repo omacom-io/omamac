@@ -51,11 +51,8 @@ section "Installing bash..."
 brew install bash
 
 # Install basic tools
-section "Installing brew packages..."
-brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font tailscale
-
-# Install GUI applications via cask
-brew_cask_install 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code
+section "Installing core packages..."
+brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
@@ -98,9 +95,13 @@ mkdir -p "$HOME/.config/tmux"
 download config/tmux.conf >"$HOME/.config/tmux/tmux.conf"
 echo "✓ Tmux"
 
-# Turn off all the conflicting default Apple keybindings
 rexec config/macos/dock.sh
 rexec config/macos/hotkeys.sh
 echo "✓ macOS"
+
+# Install GUI applications via cask
+section "Install extra packages"
+brew_cask_install 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code
+brew_install tailscale
 
 echo 'Now run: chsh -s "/opt/homebrew/bin/bash"'
