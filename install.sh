@@ -29,26 +29,14 @@ section() {
   echo
 }
 
-brew_install() {
-  for pkg in "$@"; do
-    brew install "$pkg" || true
-  done
-}
-
-brew_cask_install() {
-  for pkg in "$@"; do
-    brew install --cask "$pkg" || true
-  done
-}
-
 if ! command -v brew >/dev/null 2>&1; then
   section "Installing brew..."
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 fi
 
-# Install basic tools
-section "Installing core packages..."
-brew_install aerospace tmux mise opencode lazygit starship zoxide eza bat jq gum font-jetbrains-mono-nerd-font
+# Install all packages from Brewfile
+section "Installing packages..."
+download Brewfile | brew bundle --file=-
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
@@ -102,11 +90,6 @@ echo "✓ Tmux"
 rexec config/macos/dock.sh
 rexec config/macos/hotkeys.sh
 echo "✓ macOS"
-
-# Install GUI applications via cask
-section "Install extra packages"
-brew_cask_install 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast
-brew_install tailscale
 
 section "Finished!"
 echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
