@@ -102,11 +102,11 @@ echo "✓ macOS"
 
 # Install GUI applications via cask
 section "Install extra packages"
-brew_cask_install 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code
+brew_cask_install 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast
 brew_install tailscale
 
 section "Finished!"
-echo "✓ System ready to use"
+echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
 
 if [[ "$SHELL" != */bash ]]; then
   echo 'Now run: chsh -s "/opt/homebrew/bin/bash"'
