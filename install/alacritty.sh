@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install Alacritty manually from GitHub releases (deprecated on homebrew due to unsigned binaries)
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Configure macOS Dock settings
 # Restart dock to apply changes

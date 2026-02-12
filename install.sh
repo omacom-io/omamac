@@ -31,7 +31,7 @@ config() {
 
 if ! command -v brew >/dev/null 2>&1; then
   section "Installing brew..."
-  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | zsh
 fi
 
 # Install all packages from Brewfile
@@ -40,7 +40,7 @@ download Brewfile | brew bundle --file=-
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
-download install/alacritty.sh | bash
+download install/alacritty.sh | zsh
 
 # Install basic dev envs
 section "Installing mise envs..."
@@ -73,8 +73,8 @@ config "Tmux" config/tmux.conf "$HOME/.config/tmux/tmux.conf"
 config "Aerospace" config/aerospace.toml "$HOME/.config/aerospace/aerospace.toml"
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' >/dev/null 2>&1 || true
 
-download config/macos/dock.sh | bash
-download config/macos/hotkeys.sh | bash
+download config/macos/dock.sh | zsh
+download config/macos/hotkeys.sh | zsh
 echo "✓ macOS"
 
 section "Finished!"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Disable Mission Control keybindings to avoid conflicts with aerospace
 # Log out and back in for changes to take effect
