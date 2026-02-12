@@ -37,9 +37,3 @@ defaults write -g NSUserKeyEquivalents -dict-add 'Minimize All' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Hide' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Hide Others' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Zoom' '\0'
-
-# Disable Spotlight shortcut (Cmd+Space) to free it up for Raycast
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{ enabled = 0; }'
-
-# NOTE: Raycast needs to be configured manually to use Cmd+Space
-# This can only be done through Raycast Preferences after installation
