@@ -29,6 +29,18 @@ section() {
   echo
 }
 
+brew_install() {
+  for pkg in "$@"; do
+    brew install "$pkg" || true
+  done
+}
+
+brew_cask_install() {
+  for pkg in "$@"; do
+    brew install --cask "$pkg" || true
+  done
+}
+
 if ! command -v brew >/dev/null 2>&1; then
   section "Installing brew..."
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
@@ -40,12 +52,10 @@ brew install bash
 
 # Install basic tools
 section "Installing brew packages..."
-brew install aerospace tmux mise opencode lazygit starship zoxide eza jq gum || true
-brew install font-jetbrains-mono-nerd-font || true
-brew install tailscale || true
+brew_install aerospace tmux mise opencode lazygit starship zoxide eza jq gum font-jetbrains-mono-nerd-font tailscale
 
 # Install GUI applications via cask
-brew install --cask 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code || true
+brew_cask_install 1password docker google-chrome dropbox spotify signal whatsapp obsidian claude-code
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
