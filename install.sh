@@ -84,7 +84,7 @@ echo "✓ Shell configs"
 
 mkdir -p "$HOME/.config/aerospace"
 download config/aerospace.toml >"$HOME/.config/aerospace/aerospace.toml"
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' 2>/dev/null || true
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' >/dev/null 2>&1 || true
 echo "✓ Aerospace"
 
 mkdir -p "$HOME/.config/alacritty"
