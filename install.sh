@@ -48,6 +48,15 @@ mise settings ruby.compile=false
 mise use -g ruby
 mise use -g node
 
+# Checkout and copy configs from omadots
+curl -fsSL https://raw.githubusercontent.com/omacom-io/omadots/HEAD/install.sh | zsh
+
+# Copy shell configs to home directory
+cp "$CONFIG_TEMP/config/zshrc" "$HOME/.zshrc"
+cp "$CONFIG_TEMP/config/zprofile" "$HOME/.zprofile"
+rm -rf "$CONFIG_TEMP"
+echo "✓ All configs installed"
+
 # Configure git
 if [[ ! -f $HOME/.config/git/config ]]; then
   section "Configuring git..."
@@ -59,18 +68,6 @@ if [[ ! -f $HOME/.config/git/config ]]; then
   echo "✓ Git config"
 fi
 
-# Copy configs
-section "Configuring shell..."
-
-config "Zshrc" config/zshrc "$HOME/.zshrc"
-config "Zshprofile" config/zprofile "$HOME/.zprofile"
-config "Starship" config/starship.toml "$HOME/.config/starship.toml"
-config "Tmux" config/tmux.conf "$HOME/.config/tmux/tmux.conf"
-
-section "Configuring apps..."
-config "Alacritty" config/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
-config "Ghostty" config/ghostty.conf "$HOME/.config/ghostty/config"
-config "Aerospace" config/aerospace.toml "$HOME/.config/aerospace/aerospace.toml"
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' >/dev/null 2>&1 || true
 
 download config/macos/dock.sh | zsh
