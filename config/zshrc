@@ -1,6 +1,0 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="./bin:/usr/local/bin:$PATH"
-
-export EDITOR="nvim"
-
-source "$HOME/.config/shell/all"

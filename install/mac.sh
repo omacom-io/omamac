@@ -37,3 +37,18 @@ defaults write -g NSUserKeyEquivalents -dict-add 'Minimize All' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Hide' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Hide Others' '\0'
 defaults write -g NSUserKeyEquivalents -dict-add 'Zoom' '\0'
+
+# Configure macOS Dock settings
+# Restart dock to apply changes
+
+# Set dock position to right
+defaults write com.apple.dock orientation -string "right"
+
+# Enable autohide
+defaults write com.apple.dock autohide -bool true
+
+# Set dock size to 43
+defaults write com.apple.dock tilesize -int 43
+
+# Restart dock to apply changes
+killall Dock

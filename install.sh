@@ -48,25 +48,29 @@ mise settings ruby.compile=false
 mise use -g ruby
 mise use -g node
 
-# Checkout and copy configs from omadots
-curl -fsSL https://raw.githubusercontent.com/omacom-io/omadots/HEAD/install.sh | zsh
+# Install Omadots
+curl -fsSL https://install.omacom.io/dots | bash
 
-# Copy shell configs to home directory
-cp "$CONFIG_TEMP/config/zshrc" "$HOME/.zshrc"
-cp "$CONFIG_TEMP/config/zprofile" "$HOME/.zprofile"
-rm -rf "$CONFIG_TEMP"
-echo "✓ All configs installed"
+section "Configuring zsh..."
+cat >>"$HOME/.zshrc" <<'EOF'
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source ~/.config/shell/all
+EOF
+echo '[[ -f ~/.zshrc ]] && . ~/.zshrc' >"$HOME/.bash_profile"
 
-# Configure git
-if [[ ! -f $HOME/.config/git/config ]]; then
-  section "Configuring git..."
+# ─────────────────────────────────────────────
+# Omamac configs
+# ─────────────────────────────────────────────
+REPO="https://github.com/omacom-io/omaterm.git"
+TMPDIR="$(mktemp -d)"
+trap 'rm -rf "$TMPDIR"' EXIT
 
-  GIT_NAME=$(gum input --placeholder "Your full name" --prompt "Git name: " </dev/tty)
-  GIT_EMAIL=$(gum input --placeholder "your@email.com" --prompt "Git email: " </dev/tty)
+section "Cloning Omamac..."
+git clone --depth 1 "$REPO" "$TMPDIR"
 
-  download config/git.conf | sed "s/{{GIT_NAME}}/${GIT_NAME}/g; s/{{GIT_EMAIL}}/${GIT_EMAIL}/g" >"$HOME/.config/git/config"
-  echo "✓ Git config"
-fi
+section "Installing config..."
+mkdir -p "$HOME/.config"
+cp -Rf "$TMPDIR/config/"* "$HOME/.config/"
 
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' >/dev/null 2>&1 || true
 
