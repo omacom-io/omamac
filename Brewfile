@@ -1,9 +1,9 @@
 # Taps
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
+tap "nikitabobko/tap"
 
 # Core packages
-brew "aerospace"
 brew "tmux"
 brew "mise"
 brew "opencode"
@@ -19,10 +19,11 @@ brew "tailscale"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
+cask "aerospace"
 
 # GUI Applications
 cask "1password"
-cask "docker"
+cask "docker-desktop"
 cask "google-chrome"
 cask "dropbox"
 cask "spotify"
