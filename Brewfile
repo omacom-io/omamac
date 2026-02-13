@@ -1,8 +1,4 @@
-# Taps
-tap "nikitabobko/tap"
-
 # Core packages
-cask "aerospace"
 brew "tmux"
 brew "mise"
 brew "opencode"
@@ -18,6 +14,10 @@ brew "tailscale"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
+
+# Aerospace
+tap "nikitabobko/tap"
+cask "aerospace"
 
 # GUI Applications
 cask "1password"
