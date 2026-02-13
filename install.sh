@@ -30,7 +30,7 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 section "Installing packages..."
-(cat "$INSTALLER_DIR/Brewfile" | brew bundle --file=-)
+brew bundle --file="$INSTALLER_DIR/Brewfile" || true
 
 # Install Alacritty manually from GitHub releases
 section "Installing Alacritty..."
