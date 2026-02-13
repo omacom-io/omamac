@@ -12,7 +12,7 @@ echo -e " ▄██████▄    ▄▄▄▄███▄▄▄▄      ▄
  ▀██████▀   ▀█   ███   █▀    ███    █▀   ▀█   ███   █▀    ███    █▀  ████████▀ "
 
 section() {
-  echo -e "\n==> $1\n"
+  echo -e "\n==> $1"
 }
 
 # Clone
@@ -51,6 +51,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 source ~/.config/shell/all
 EOF
 echo '[[ -f ~/.zshrc ]] && . ~/.zshrc' >"$HOME/.zprofile"
+echo "✓ .zshrc"
 
 # Omamac configs
 section "Installing config..."
@@ -63,4 +64,4 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 echo "✓ macOS"
 
 section "Finished!"
-echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
+echo "✓ Now logout and back in for everything to take effect (Cmd + Shift + Q)"
