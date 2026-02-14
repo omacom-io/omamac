@@ -73,5 +73,6 @@ if [[ ! -f $HOME/Library/Preferences/com.raycast.macos.plist ]]; then
   echo "✓ Raycast"
 fi
 
+# Done!
 section "Finished!"
 echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
