@@ -44,7 +44,7 @@ mise use -g ruby
 mise use -g node
 
 # Install Omadots
-curl -fsSL https://install.omacom.io/dots | zsh
+curl -fsSL https://raw.githubusercontent.com/omacom-io/omadots/refs/heads/master/install.sh | zsh
 
 section "Configuring brew init..."
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>"$HOME/.config/shell/inits"
