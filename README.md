@@ -1,6 +1,6 @@
 # Omamac
 
-Omamac is a keyboard-centric setup for macOS that takes inspiration from [Omarchy](https://omarchy.org/). It's built on Rectangle Pro for layouts, Hammerspoon for navigation between windows, Raycast for app launching, and keybindings for moving between workspaces. It also sets up all the basic developer tooling needed for a Terminal-driven workflow.
+Omamac is a keyboard-centric setup for macOS that takes inspiration from [Omarchy](https://omarchy.org/). It's built on Rectangle Pro for window positioning, Hammerspoon for window navigation, hotkeys for workspace navigation, and Raycast for app launching. It also sets up all the basic developer tooling needed for a Terminal-driven workflow centered around Tmux.
 
 ## Install
 
