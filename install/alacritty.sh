@@ -12,3 +12,5 @@ if [[ ! -d "/Applications/Alacritty.app" ]]; then
   hdiutil detach /Volumes/Alacritty
   rm "$ALACRITTY_DMG"
 fi
+
+echo "✓ Alacritty"
