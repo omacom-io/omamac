@@ -38,9 +38,9 @@ section "Installing Alacritty..."
 . "$INSTALLER_DIR/install/alacritty.sh"
 
 # Install basic dev envs
-section "Installing mise envs..."
-mise use -g ruby
+section "Installing Ruby + Node..."
 mise use -g node
+mise use -g ruby
 
 # Install Omadots
 curl -fsSL https://raw.githubusercontent.com/omacom-io/omadots/refs/heads/master/install.sh | zsh
