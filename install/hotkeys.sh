@@ -3,9 +3,6 @@
 # Disable Mission Control keybindings to avoid conflicts with aerospace
 # Log out and back in for changes to take effect
 
-# Hammerspoon config
-defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
-
 # Disable Mission Control (Ctrl+Up)
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 32 '{ enabled = 0; }'
 
@@ -41,11 +38,3 @@ done
 
 # Apply keyboard shortcut changes immediately
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u 2>/dev/null || true
-
-# Configure the dock
-defaults write com.apple.dock orientation -string "right"
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock tilesize -int 43
-
-# Restart dock to apply changes
-killall Dock

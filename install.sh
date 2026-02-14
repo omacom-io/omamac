@@ -50,12 +50,18 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>"$HOME/.config/shell/inits"
 echo "✓ Zsh"
 
 # Omamac configs
-section "Installing config..."
+section "Configuring Mac..."
 mkdir -p "$HOME/.config"
 cp -Rf "$INSTALLER_DIR/config/"* "$HOME/.config/"
 
-. "$INSTALLER_DIR/install/mac.sh"
-echo "✓ macOS"
+. "$INSTALLER_DIR/install/hotkeys.sh"
+echo "✓ Hotkeys"
+
+. "$INSTALLER_DIR/install/dock.sh"
+echo "✓ Dock"
+
+defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
+echo "✓ Hammerspoon"
 
 if [[ ! -f $HOME/Library/Preferences/com.knollsoft.Hookshot.plist ]]; then
   cp "$HOME/.config/rectangle/config.plist" "$HOME/Library/Preferences/com.knollsoft.Hookshot.plist"
@@ -68,4 +74,4 @@ if [[ ! -f $HOME/Library/Preferences/com.raycast.macos.plist ]]; then
 fi
 
 section "Finished!"
-echo "✓ Now logout and back in for everything to take effect (Cmd + Shift + Q)"
+echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
