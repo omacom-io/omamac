@@ -1,4 +1,6 @@
 # Core packages
+brew "rectangle-pro"
+cask "hammerspoon"
 brew "tmux"
 brew "mise"
 brew "opencode"
@@ -11,13 +13,7 @@ brew "jq"
 brew "gum"
 brew "gh"
 brew "tailscale"
-
-# Fonts
 cask "font-jetbrains-mono-nerd-font"
-
-# Aerospace
-tap "nikitabobko/tap"
-cask "aerospace"
 
 # GUI Applications
 cask "1password"
