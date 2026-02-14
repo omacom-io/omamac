@@ -39,7 +39,6 @@ section "Installing Alacritty..."
 
 # Install basic dev envs
 section "Installing mise envs..."
-mise settings ruby.compile=false
 mise use -g ruby
 mise use -g node
 
