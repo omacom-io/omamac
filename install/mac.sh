@@ -26,6 +26,19 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 303 '{ e
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 304 '{ enabled = 0; }' # Move to previous display
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 305 '{ enabled = 0; }' # Move to next display
 
+# Set cmd-1 through cmd-9 to switch to workspaces 1-9
+# IDs 118-126 are "Switch to Desktop 1-9"
+# Keycodes 18-26 are for keys 1-9
+# Modifier 1048576 is Command (cmd)
+for i in {1..9}; do
+  id=$((117 + i))
+  keycode=$((17 + i))
+  defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add $id "{ enabled = 1; value = { parameters = (65535, $keycode, 1048576); type = standard; }; }"
+done
+
+# Apply keyboard shortcut changes immediately
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u 2>/dev/null || true
+
 # Set dock position to right
 defaults write com.apple.dock orientation -string "right"
 
