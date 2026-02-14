@@ -58,10 +58,14 @@ section "Installing config..."
 mkdir -p "$HOME/.config"
 cp -Rf "$INSTALLER_DIR/config/"* "$HOME/.config/"
 
-osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/AeroSpace.app", hidden:false}' >/dev/null 2>&1 || true
-
 . "$INSTALLER_DIR/install/mac.sh"
 echo "✓ macOS"
+
+# Rectangle Pro config - symlink plist from dotfiles
+if [[ ! -f $HOME/Library/Preferences/com.knollsoft.Hookshot.plist ]]; then
+  cp "$HOME/.config/rectangle/config.plist" "$HOME/Library/Preferences/com.knollsoft.Hookshot.plist"
+  echo "✓ Rectangle Pro"
+fi
 
 section "Finished!"
 echo "✓ Now logout and back in for everything to take effect (Cmd + Shift + Q)"
