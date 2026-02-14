@@ -74,6 +74,23 @@ if [[ ! -f $HOME/Library/Preferences/com.raycast.macos.plist ]]; then
   echo "✓ Raycast"
 fi
 
+# Interactive setup
+if ! gh auth status &>/dev/null; then
+  echo
+  if gum confirm "Authenticate with GitHub?" </dev/tty; then
+    gh auth login
+  fi
+fi
+
+if ! tailscale status &>/dev/null; then
+  echo
+  if gum confirm "Connect to Tailscale network?" </dev/tty; then
+    echo "This might take a minute..."
+    sudo systemctl enable --now tailscaled.service
+    sudo tailscale up --ssh --accept-routes
+  fi
+fi
+
 # Done!
 section "Finished!"
 echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
