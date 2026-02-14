@@ -57,10 +57,14 @@ cp -Rf "$INSTALLER_DIR/config/"* "$HOME/.config/"
 . "$INSTALLER_DIR/install/mac.sh"
 echo "✓ macOS"
 
-# Rectangle Pro config - symlink plist from dotfiles
 if [[ ! -f $HOME/Library/Preferences/com.knollsoft.Hookshot.plist ]]; then
   cp "$HOME/.config/rectangle/config.plist" "$HOME/Library/Preferences/com.knollsoft.Hookshot.plist"
   echo "✓ Rectangle Pro"
+fi
+
+if [[ ! -f $HOME/Library/Preferences/com.raycast.macos.plist ]]; then
+  cp "$HOME/.config/raycast/config.plist" "$HOME/Library/Preferences/com.raycast.macos.plist"
+  echo "✓ Raycast"
 fi
 
 section "Finished!"
