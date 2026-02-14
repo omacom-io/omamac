@@ -26,6 +26,9 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 303 '{ e
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 304 '{ enabled = 0; }' # Move to previous display
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 305 '{ enabled = 0; }' # Move to next display
 
+# Disable Spotlight cmd-space shortcut
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{ enabled = 0; }'
+
 # Set cmd-1 through cmd-9 to switch to workspaces 1-9
 # IDs 118-126 are "Switch to Desktop 1-9"
 # Keycodes 18-26 are for keys 1-9
