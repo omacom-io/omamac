@@ -1,5 +1,5 @@
 # Core packages
-brew "rectangle-pro"
+cask "rectangle-pro"
 cask "hammerspoon"
 brew "tmux"
 brew "mise"
