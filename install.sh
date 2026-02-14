@@ -45,13 +45,9 @@ mise use -g node
 # Install Omadots
 curl -fsSL https://install.omacom.io/dots | zsh
 
-section "Configuring zsh..."
-cat >"$HOME/.zshrc" <<'EOF'
-eval "$(/opt/homebrew/bin/brew shellenv)"
-source ~/.config/shell/all
-EOF
-echo '[[ -f ~/.zshrc ]] && . ~/.zshrc' >"$HOME/.zprofile"
-echo "✓ .zshrc"
+section "Configuring shell inits..."
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>"$HOME/.config/shell/inits"
+echo "✓ Zsh"
 
 # Omamac configs
 section "Installing config..."
