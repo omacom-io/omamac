@@ -42,13 +42,9 @@ done
 # Apply keyboard shortcut changes immediately
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u 2>/dev/null || true
 
-# Set dock position to right
+# Configure the dock
 defaults write com.apple.dock orientation -string "right"
-
-# Enable autohide
 defaults write com.apple.dock autohide -bool true
-
-# Set dock size to 43
 defaults write com.apple.dock tilesize -int 43
 
 # Restart dock to apply changes
