@@ -19,7 +19,7 @@ install() {
   }
 
   login_item() {
-    osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"/Applications/$1.app\", hidden:false}" 2>/dev/null
+    osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"/Applications/$1.app\", hidden:false}" &>/dev/null
   }
 
   section "Permission needed for setup..."
