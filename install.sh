@@ -42,7 +42,7 @@ install() {
   git clone --depth 1 "$REPO" "$INSTALLER_DIR"
 
   section "Installing packages..."
-  brew bundle --file="$INSTALLER_DIR/Brewfile" || true
+  brew bundle --verbose --file="$INSTALLER_DIR/Brewfile" || true
 
   # Install Alacritty manually from GitHub releases
   section "Installing Alacritty..."
