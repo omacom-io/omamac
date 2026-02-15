@@ -9,9 +9,13 @@ defaults write com.apple.dock tilesize -int 43
 # Normal (non-natural) scroll direction
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# 24-hour clock
+defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
+
 # Keyboard repeat speed
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-# Restart dock to apply changes
+# Restart dock and menu bar to apply changes
 killall Dock
+killall ControlCenter
