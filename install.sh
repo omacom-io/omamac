@@ -42,7 +42,7 @@ install() {
   git clone --depth 1 "$REPO" "$INSTALLER_DIR"
 
   section "Installing packages..."
-  packages=(tmux mise opencode lazygit lazydocker starship zoxide eza jq gum gh tailscale)
+  packages=(tmux mise opencode lazygit lazydocker starship zoxide eza jq gum gh tailscale libyaml)
   for pkg in $packages; do brew install "$pkg" || true; done
 
   # Install Alacritty manually from GitHub releases
