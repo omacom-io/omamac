@@ -12,6 +12,7 @@ brew "eza"
 brew "jq"
 brew "gum"
 brew "gh"
+brew "git"
 brew "tailscale"
 cask "font-jetbrains-mono-nerd-font"
 
