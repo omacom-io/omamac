@@ -27,6 +27,7 @@ sudo echo "✓ Granted"
 if ! command -v brew >/dev/null 2>&1; then
   section "Installing brew..."
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+  eval "$(/opt/homebrew/bin/brew shellenv zsh)"
   brew install git
 fi
 
