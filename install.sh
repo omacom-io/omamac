@@ -71,20 +71,14 @@ install() {
   mkdir -p "$HOME/.config"
   cp -Rf "$INSTALLER_DIR/config/"* "$HOME/.config/"
 
-  . "$INSTALLER_DIR/install/hotkeys.sh"
-  echo "✓ Hotkeys"
-
-  . "$INSTALLER_DIR/install/dock.sh"
-  echo "✓ Dock"
+  . "$INSTALLER_DIR/install/mac.sh"
+  echo "✓ Settings"
 
   defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
   login_item Hammerspoon
   echo "✓ Hammerspoon"
 
-  if [[ ! -f $HOME/Library/Preferences/com.knollsoft.Hookshot.plist ]]; then
-    cp "$HOME/.config/rectangle/config.plist" "$HOME/Library/Preferences/com.knollsoft.Hookshot.plist"
-    login_item "Rectangle Pro"
-  fi
+  login_item "Rectangle Pro"
   echo "✓ Rectangle Pro"
 
   if [[ ! -f $HOME/Library/Preferences/com.raycast.macos.plist ]]; then
@@ -99,8 +93,12 @@ install() {
   # Done!
   section "Finished!"
   echo "1. You must manually create the nine default workspaces with F3"
-  echo "2. Remember to authenticate with: gh auth login"
-  echo "3. Then logout and back in for everything to take effect (Cmd + Shift + Q)"
+  echo "2. Manually disable all Keyboard Shortcuts for Windows + Spotlight + Mission Control"
+  echo "3. Manually enable 'Switch to Desktop' Keyboard Shortcuts on CMD-[1-9]"
+  echo "4. Manually import Rectangle Pro config from ~/.config/rectangle/RectangleProConfig.json"
+  echo "5. Manually import Raycast config from ~/.config/raycast/Raycast.rayconfig with pw: 12345678"
+  echo "6. Remember to authenticate with: gh auth login"
+  echo "7. Then logout and back in for everything to take effect (Cmd + Shift + Q)"
 }
 
 # Must use a function to prevent brew installs from stealing stdin
