@@ -16,6 +16,13 @@ section() {
   echo -e "\n==> $1"
 }
 
+# Install all packages from Brew
+if ! command -v brew >/dev/null 2>&1; then
+  section "Installing brew..."
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | zsh
+  brew install git
+fi
+
 # Clone
 REPO="https://github.com/omacom-io/omamac.git"
 INSTALLER_DIR="$(mktemp -d)"
@@ -23,12 +30,6 @@ trap 'rm -rf "$INSTALLER_DIR"' EXIT
 
 section "Cloning..."
 git clone --depth 1 "$REPO" "$INSTALLER_DIR"
-
-# Install all packages from Brew
-if ! command -v brew >/dev/null 2>&1; then
-  section "Installing brew..."
-  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | zsh
-fi
 
 section "Installing packages..."
 brew bundle --file="$INSTALLER_DIR/Brewfile" || true
