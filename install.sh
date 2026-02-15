@@ -95,7 +95,7 @@ install() {
   echo "1. You must manually create the nine default workspaces with F3"
   echo "2. Manually disable all Keyboard Shortcuts for Windows + Spotlight + Mission Control"
   echo "3. Manually enable 'Switch to Desktop' Keyboard Shortcuts on CMD-[1-9]"
-  echo "4. Manually import Rectangle Pro config from ~/.config/rectangle/RectangleProConfig.json"
+  echo "4. Manually import Rectangle Pro config from ~/.config/rectangle/RectangleProConfig.json (reveal hidden with Cmd + Shift + . in Finder)"
   echo "5. Manually import Raycast config from ~/.config/raycast/Raycast.rayconfig with pw: 12345678"
   echo "6. Remember to authenticate with: gh auth login"
   echo "7. Then logout and back in for everything to take effect (Cmd + Shift + Q)"
