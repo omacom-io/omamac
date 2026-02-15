@@ -24,16 +24,19 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 304 '{ e
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 305 '{ enabled = 0; }' # Move to next display
 
 # Disable Spotlight cmd-space shortcut
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{ enabled = 0; }'
+# ASCII 32 = space, keycode 49 = spacebar, modifier 1048576 = cmd
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{ enabled = 0; value = { parameters = (32, 49, 1048576); type = standard; }; }'
 
 # Set cmd-1 through cmd-9 to switch to workspaces 1-9
 # IDs 118-126 are "Switch to Desktop 1-9"
 # Keycodes 18-26 are for keys 1-9
+# ASCII codes 49-57 are for characters 1-9
 # Modifier 1048576 is Command (cmd)
 for i in {1..9}; do
   id=$((117 + i))
   keycode=$((17 + i))
-  defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add $id "{ enabled = 1; value = { parameters = (65535, $keycode, 1048576); type = standard; }; }"
+  ascii=$((48 + i))
+  defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add $id "{ enabled = 1; value = { parameters = ($ascii, $keycode, 1048576); type = standard; }; }"
 done
 
 # Apply keyboard shortcut changes immediately
