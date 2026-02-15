@@ -50,6 +50,7 @@ install() {
 
   # Install basic dev envs
   section "Installing Ruby + Node..."
+  eval "$(brew --prefix)/bin/mise activate zsh"
   mise use -g node
   mise use -g ruby
 
