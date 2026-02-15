@@ -93,20 +93,8 @@ install() {
   fi
   echo "✓ Raycast"
 
-  # Interactive setup
-  if ! gh auth status &>/dev/null; then
-    echo
-    if gum confirm "Authenticate with GitHub?" </dev/tty; then
-      gh auth login
-    fi
-  fi
-
-  if ! tailscale status &>/dev/null; then
-    echo
-    if gum confirm "Connect to Tailscale network?" </dev/tty; then
-      sudo tailscale up --ssh --accept-routes
-    fi
-  fi
+  login_item Tailscale
+  echo "✓ Tailscale"
 
   # Done!
   section "Finished!"
