@@ -19,7 +19,7 @@ section() {
 # Install all packages from Brew
 if ! command -v brew >/dev/null 2>&1; then
   section "Installing brew..."
-  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | zsh
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
   brew install git
 fi
 
