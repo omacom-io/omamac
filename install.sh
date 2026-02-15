@@ -83,7 +83,7 @@ install() {
 
   if [[ ! -f $HOME/Library/Preferences/com.knollsoft.Hookshot.plist ]]; then
     cp "$HOME/.config/rectangle/config.plist" "$HOME/Library/Preferences/com.knollsoft.Hookshot.plist"
-    login_item Hookshot
+    login_item "Rectangle Pro"
   fi
   echo "✓ Rectangle Pro"
 
