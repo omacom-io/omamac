@@ -93,4 +93,5 @@ fi
 
 # Done!
 section "Finished!"
-echo "Now logout and back in for everything to take effect (Cmd + Shift + Q)"
+echo "You must manually create the nine default workspaces with F3"
+echo "Then logout and back in for everything to take effect (Cmd + Shift + Q)"
