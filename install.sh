@@ -114,4 +114,5 @@ install() {
   echo "Then logout and back in for everything to take effect (Cmd + Shift + Q)"
 }
 
+# Must use a function to prevent brew installs from stealing stdin
 install
