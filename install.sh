@@ -22,6 +22,7 @@ login_item() {
 
 # Install all packages from Brew
 if ! command -v brew >/dev/null 2>&1; then
+  sudo echo # Ensure we have sudo in this session
   section "Installing brew..."
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
   brew install git
