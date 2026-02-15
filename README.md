@@ -18,3 +18,42 @@ curl -fsSL https://omamac.org/install | bash
 - **Apps**: 1Password, Obsidian, Google Chrome, Dropbox, Spotify, Signal, WhatsApp
 - **Networking**: Tailscale
 - **Git**: Helpful aliases and config
+
+## Hotkeys
+
+### Window Navigation (Hammerspoon)
+
+| Hotkey | Action |
+|--------|--------|
+| `Cmd+Ctrl+→` | Focus window to the right |
+| `Cmd+Ctrl+←` | Focus window to the left |
+| `Cmd+Ctrl+↑` | Focus window above |
+| `Cmd+Ctrl+↓` | Focus window below |
+
+### Window Positioning (Rectangle Pro)
+
+| Hotkey | Action |
+|--------|--------|
+| `Cmd+Ctrl+←` | Left Half |
+| `Cmd+Ctrl+→` | Right Half |
+| `Cmd+Ctrl+↑` | Top Left Quarter |
+| `Cmd+Ctrl+↓` | Bottom Left Quarter |
+| `Cmd+Ctrl+Shift+↑` | Top Right Quarter |
+| `Cmd+Ctrl+Shift+↓` | Bottom Right Quarter |
+| `Cmd+Ctrl+⌥+←` | First Fourth (Left) |
+| `Cmd+Ctrl+⌥+→` | Last Fourth (Right) |
+| `Cmd+Ctrl+⌥+↑` | Top Left Eighth |
+| `Cmd+Ctrl+⌥+↓` | Bottom Left Eighth |
+| `Cmd+Ctrl+⌥+Shift+↑` | Top Right Eighth |
+| `Cmd+Ctrl+⌥+Shift+↓` | Bottom Right Eighth |
+| `Cmd+Ctrl+Return` | Center Half |
+| `Cmd+Ctrl+⌥+Return` | Maximize |
+
+### Application Launching (Raycast)
+
+| Hotkey | Action |
+|--------|--------|
+| `Cmd+Space` | Launcher |
+| `Cmd+Ctrl+Return` | Launch Terminal (Alacritty) |
+| `Cmd+Ctrl+Shift+Return` | Launch Browser (Chrome) |
+
