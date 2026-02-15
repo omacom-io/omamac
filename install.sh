@@ -16,6 +16,10 @@ section() {
   echo -e "\n==> $1"
 }
 
+login_item() {
+  osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"/Applications/$1.app\", hidden:false}" 2>/dev/null
+}
+
 # Install all packages from Brew
 if ! command -v brew >/dev/null 2>&1; then
   section "Installing brew..."
@@ -62,17 +66,20 @@ echo "✓ Hotkeys"
 echo "✓ Dock"
 
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
+login_item Hammerspoon
 echo "✓ Hammerspoon"
 
 if [[ ! -f $HOME/Library/Preferences/com.knollsoft.Hookshot.plist ]]; then
   cp "$HOME/.config/rectangle/config.plist" "$HOME/Library/Preferences/com.knollsoft.Hookshot.plist"
-  echo "✓ Rectangle Pro"
+  login_item Hookshot
 fi
+echo "✓ Rectangle Pro"
 
 if [[ ! -f $HOME/Library/Preferences/com.raycast.macos.plist ]]; then
   cp "$HOME/.config/raycast/config.plist" "$HOME/Library/Preferences/com.raycast.macos.plist"
-  echo "✓ Raycast"
+  login_item Raycast
 fi
+echo "✓ Raycast"
 
 # Interactive setup
 if ! gh auth status &>/dev/null; then
