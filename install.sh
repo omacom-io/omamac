@@ -92,8 +92,6 @@ fi
 if ! tailscale status &>/dev/null; then
   echo
   if gum confirm "Connect to Tailscale network?" </dev/tty; then
-    echo "This might take a minute..."
-    sudo systemctl enable --now tailscaled.service
     sudo tailscale up --ssh --accept-routes
   fi
 fi
