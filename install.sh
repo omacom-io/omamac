@@ -71,6 +71,10 @@ install() {
   mkdir -p "$HOME/.config"
   cp -Rf "$INSTALLER_DIR/config/"* "$HOME/.config/"
 
+  # Create hush file to suppress "Last login" message
+  touch "$HOME/.hushlogin"
+  echo "✓ Hush login"
+
   . "$INSTALLER_DIR/install/mac.sh"
   echo "✓ Settings"
 
