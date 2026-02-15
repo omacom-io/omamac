@@ -42,14 +42,19 @@ install() {
   git clone --depth 1 "$REPO" "$INSTALLER_DIR"
 
   section "Installing packages..."
-  brew bundle --verbose --file="$INSTALLER_DIR/Brewfile" || true
+  packages=(tmux mise opencode lazygit lazydocker starship zoxide eza jq gum gh tailscale)
+  for pkg in $packages; do brew install "$pkg" || true; done
+
+  section "Installing apps..."
+  casks=(rectangle-pro hammerspoon font-jetbrains-mono-nerd-font 1password docker-desktop google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast zoom)
+  for cask in $casks; do brew install --cask "$cask" || true; done
 
   # Install Alacritty manually from GitHub releases
   section "Installing Alacritty..."
   . "$INSTALLER_DIR/install/alacritty.sh"
 
   # Install basic dev envs
-  section "Installing Ruby + Node..."
+  section "Installing mise w/ Ruby + Node..."
   eval "$(brew --prefix)/bin/mise activate zsh"
   mise use -g node
   mise use -g ruby
