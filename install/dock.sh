@@ -9,6 +9,9 @@ defaults write com.apple.dock tilesize -int 43
 # Normal (non-natural) scroll direction
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Disable click desktop to reveal it
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
 # 24-hour clock
 defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
 
