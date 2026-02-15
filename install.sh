@@ -110,8 +110,9 @@ install() {
 
   # Done!
   section "Finished!"
-  echo "You must manually create the nine default workspaces with F3"
-  echo "Then logout and back in for everything to take effect (Cmd + Shift + Q)"
+  echo "1. You must manually create the nine default workspaces with F3"
+  echo "2. Remember to authenticate with: gh auth login"
+  echo "3. Then logout and back in for everything to take effect (Cmd + Shift + Q)"
 }
 
 # Must use a function to prevent brew installs from stealing stdin
