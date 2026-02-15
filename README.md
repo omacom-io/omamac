@@ -25,35 +25,93 @@ curl -fsSL https://omamac.org/install | bash
 
 | Hotkey | Action |
 |--------|--------|
-| `Cmd+Ctrl+→` | Focus window to the right |
-| `Cmd+Ctrl+←` | Focus window to the left |
-| `Cmd+Ctrl+↑` | Focus window above |
-| `Cmd+Ctrl+↓` | Focus window below |
+| `Cmd + Ctrl + →` | Focus window to the right |
+| `Cmd + Ctrl + ←` | Focus window to the left |
+| `Cmd + Ctrl + ↑` | Focus window above |
+| `Cmd + Ctrl + ↓` | Focus window below |
 
 ### Window Positioning (Rectangle Pro)
 
 | Hotkey | Action |
 |--------|--------|
-| `Cmd+Ctrl+←` | Left Half |
-| `Cmd+Ctrl+→` | Right Half |
-| `Cmd+Ctrl+↑` | Top Left Quarter |
-| `Cmd+Ctrl+↓` | Bottom Left Quarter |
-| `Cmd+Ctrl+Shift+↑` | Top Right Quarter |
-| `Cmd+Ctrl+Shift+↓` | Bottom Right Quarter |
-| `Cmd+Ctrl+⌥+←` | First Fourth (Left) |
-| `Cmd+Ctrl+⌥+→` | Last Fourth (Right) |
-| `Cmd+Ctrl+⌥+↑` | Top Left Eighth |
-| `Cmd+Ctrl+⌥+↓` | Bottom Left Eighth |
-| `Cmd+Ctrl+⌥+Shift+↑` | Top Right Eighth |
-| `Cmd+Ctrl+⌥+Shift+↓` | Bottom Right Eighth |
-| `Cmd+Ctrl+Return` | Center Half |
-| `Cmd+Ctrl+⌥+Return` | Maximize |
+| `Cmd + Ctrl + ←` | Left Half |
+| `Cmd + Ctrl + →` | Right Half |
+| `Cmd + Ctrl + ↑` | Top Left Quarter |
+| `Cmd + Ctrl + ↓` | Bottom Left Quarter |
+| `Cmd + Ctrl + Shift + ↑` | Top Right Quarter |
+| `Cmd + Ctrl + Shift + ↓` | Bottom Right Quarter |
+| `Cmd + Ctrl + ⌥ + ←` | First Fourth (Left) |
+| `Cmd + Ctrl + ⌥ + →` | Last Fourth (Right) |
+| `Cmd + Ctrl + ⌥ + ↑` | Top Left Eighth |
+| `Cmd + Ctrl + ⌥ + ↓` | Bottom Left Eighth |
+| `Cmd + Ctrl + ⌥ + Shift + ↑` | Top Right Eighth |
+| `Cmd + Ctrl + ⌥ + Shift + ↓` | Bottom Right Eighth |
+| `Cmd + Ctrl + Return` | Center Half |
+| `Cmd + Ctrl + ⌥ + Return` | Maximize |
 
 ### Application Launching (Raycast)
 
 | Hotkey | Action |
 |--------|--------|
-| `Cmd+Space` | Launcher |
-| `Cmd+Ctrl+Return` | Launch Terminal (Alacritty) |
-| `Cmd+Ctrl+Shift+Return` | Launch Browser (Chrome) |
+| `Cmd + Space` | Launcher |
+| `Cmd + Ctrl + Return` | Launch Terminal (Alacritty) |
+| `Cmd + Ctrl + Shift + Return` | Launch Browser (Chrome) |
+
+### Terminal (Tmux)
+
+You launch tmux with `t` in a new terminal (`Ctrl + Cmd + Return`).
+
+**Prefix key:** `Ctrl + Space` (secondary: `Ctrl + b`)
+
+**Pane Management:**
+
+| Hotkey | Action |
+|--------|--------|
+| `Ctrl + Cmd + PageUp` | Split horizontally |
+| `Ctrl + Cmd + PageDown` | Split vertically |
+| `Ctrl + Cmd + Home` | Split horizontally |
+| `Ctrl + Cmd + End` | Kill pane |
+| `Ctrl + Cmd + ←` | Focus left pane |
+| `Ctrl + Cmd + →` | Focus right pane |
+| `Ctrl + Cmd + ↑` | Focus up pane |
+| `Ctrl + Cmd + ↓` | Focus down pane |
+| `Ctrl + Cmd + Shift + ←` | Resize left |
+| `Ctrl + Cmd + Shift + ↓` | Resize down |
+| `Ctrl + Cmd + Shift + ↑` | Resize up |
+| `Ctrl + Cmd + Shift + →` | Resize right |
+
+**Window Management:**
+
+| Hotkey | Action |
+|--------|--------|
+| `Ctrl + Shift + Home` | New window |
+| `Ctrl + Shift + End` | Kill window |
+| `Ctrl + Shift + PageUp` | Next window |
+| `Ctrl + Shift + PageDown` | Previous window |
+| `Ctrl + Space x` | Kill window |
+| `Ctrl + Space r` | Rename window |
+
+**Session Management:**
+
+| Hotkey | Action |
+|--------|--------|
+| `Ctrl + Cmd + Shift + Home` | New session |
+| `Ctrl + Cmd + Shift + End` | Kill session |
+| `Ctrl + Cmd + Shift + PageUp` | Previous session |
+| `Ctrl + Cmd + Shift + PageDown` | Next session |
+| `Ctrl + Space R` | Rename session |
+| `Ctrl + Space X` | Kill session |
+
+**Copy Mode (Vi):**
+
+| Hotkey | Action |
+|--------|--------|
+| `v` | Begin selection |
+| `y` | Copy selection |
+
+**Other:**
+
+| Hotkey | Action |
+|--------|--------|
+| `Ctrl + Space q` | Reload config |
 
