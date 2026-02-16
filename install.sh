@@ -54,7 +54,7 @@ install() {
 
   # Install secondary apps
   section "Installing apps..."
-  casks=(rectangle-pro hammerspoon font-jetbrains-mono-nerd-font 1password docker-desktop google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast zoom tailscale)
+  casks=(rectangle-pro hammerspoon font-jetbrains-mono-nerd-font 1password docker-desktop google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast zoom localsend tailscale)
   for cask in $casks; do brew install --cask "$cask" || true; done
 
   # Install basic dev envs
