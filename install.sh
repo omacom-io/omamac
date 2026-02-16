@@ -76,8 +76,19 @@ install() {
 
   # Install secondary apps
   section "Installing apps..."
-  casks=(rectangle-pro hammerspoon font-jetbrains-mono-nerd-font 1password docker-desktop google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast zoom localsend tailscale)
+  casks=(rectangle-pro hammerspoon font-jetbrains-mono-nerd-font docker-desktop google-chrome claude-code raycast)
   for cask in $casks; do brew install --cask "$cask" || true; done
+
+  # Install optional apps
+  section "Installing optional apps..."
+  selected_apps=$(gum choose --no-limit --height=10 \
+    --selected="1password" --selected="dropbox" --selected="spotify" \
+    --selected="signal" --selected="whatsapp" --selected="obsidian" \
+    --selected="zoom" --selected="localsend" --selected="tailscale" \
+    "1password" "dropbox" "spotify" "signal" "whatsapp" "obsidian" "zoom" "localsend" "tailscale")
+  for app in $selected_apps; do
+    brew install --cask "$app" || true
+  done
 
   # Install basic dev envs
   section "Installing Ruby + Node..."
