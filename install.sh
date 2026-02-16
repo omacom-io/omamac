@@ -66,7 +66,7 @@ install() {
   section "Configuring Mac..."
   mkdir -p "$HOME/.config"
   cp -Rf "$INSTALLER_DIR/config/"* "$HOME/.config/"
-  for dir in "$TMPDIR/config"/*/; do
+  for dir in "$INSTALLER_DIR/config"/*/; do
     echo "✓ $(basename "$dir")"
   done
 
