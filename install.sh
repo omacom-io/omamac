@@ -64,18 +64,18 @@ install() {
     --selected="signal" --selected="whatsapp" --selected="obsidian" \
     --selected="zoom" --selected="localsend" --selected="tailscale" \
     "1password" "dropbox" "spotify" "signal" "whatsapp" "obsidian" "zoom" "localsend" "lm-studio" "tailscale")
-  for app in $selected_apps; do
-    brew install --cask "$app" || true
-  done
+  while IFS= read -r app; do
+    [[ -n "$app" ]] && brew install --cask "$app" || true
+  done <<< "$selected_apps"
 
   # Install dev environments
   section "Installing dev environments..."
   selected_langs=$(gum choose --no-limit --height=15 \
     --selected="node" --selected="ruby" \
     "node" "ruby" "python" "go" "rust" "java" "php" "elixir" "erlang" "scala" "kotlin" "deno" "bun")
-  for lang in $selected_langs; do
-    mise use -g "$lang" || true
-  done
+  while IFS= read -r lang; do
+    [[ -n "$lang" ]] && mise use -g "$lang" || true
+  done <<< "$selected_langs"
 
   # Omamac configs
   section "Configuring Mac..."
