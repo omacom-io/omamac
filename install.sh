@@ -59,11 +59,11 @@ install() {
 
   # Install optional apps
   section "Installing optional apps..."
-  selected_apps=$(gum choose --no-limit --height=10 \
+  selected_apps=$(gum choose --no-limit --height=11 \
     --selected="1password" --selected="dropbox" --selected="spotify" \
     --selected="signal" --selected="whatsapp" --selected="obsidian" \
     --selected="zoom" --selected="localsend" --selected="tailscale" \
-    "1password" "dropbox" "spotify" "signal" "whatsapp" "obsidian" "zoom" "localsend" "tailscale")
+    "1password" "dropbox" "spotify" "signal" "whatsapp" "obsidian" "zoom" "localsend" "lm-studio" "tailscale")
   for app in $selected_apps; do
     brew install --cask "$app" || true
   done
