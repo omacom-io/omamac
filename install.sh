@@ -22,7 +22,7 @@ install() {
   sudo echo "✓ Granted"
 
   # Install all packages from Brew
-  if ! command -v brew >/dev/null 2>&1; then
+  if ! command -v brew &> /dev/null; then
     section "Installing brew..."
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
     eval "$(/opt/homebrew/bin/brew shellenv zsh)"
@@ -40,6 +40,28 @@ install() {
   section "Installing packages..."
   packages=(tmux mise nvim opencode lazygit lazydocker starship zoxide eza jq gum gh libyaml)
   for pkg in $packages; do brew install "$pkg" || true; done
+
+  # Configure git user BEFORE omadots (so omadots won't prompt again)
+  section "Configuring git..."
+  GIT_NAME="$(git config --global user.name 2>/dev/null || true)"
+  if [[ -z "$GIT_NAME" ]]; then
+    printf "Git name: "
+    read -r GIT_NAME </dev/tty
+    git config --global user.name "$GIT_NAME"
+    echo "✓ Git name set"
+  else
+    echo "✓ Git name"
+  fi
+
+  GIT_EMAIL="$(git config --global user.email 2>/dev/null || true)"
+  if [[ -z "$GIT_EMAIL" ]]; then
+    printf "Git email: "
+    read -r GIT_EMAIL </dev/tty
+    git config --global user.email "$GIT_EMAIL"
+    echo "✓ Git email set"
+  else
+    echo "✓ Git email"
+  fi
 
   # Install Alacritty manually from GitHub releases
   section "Installing Alacritty..."
