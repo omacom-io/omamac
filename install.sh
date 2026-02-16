@@ -68,10 +68,14 @@ install() {
     brew install --cask "$app" || true
   done
 
-  # Install basic dev envs
-  section "Installing Ruby + Node..."
-  mise use -g node
-  mise use -g ruby
+  # Install dev environments
+  section "Installing dev environments..."
+  selected_langs=$(gum choose --no-limit --height=15 \
+    --selected="node" --selected="ruby" \
+    "node" "ruby" "python" "go" "rust" "java" "php" "elixir" "erlang" "scala" "kotlin" "deno" "bun")
+  for lang in $selected_langs; do
+    mise use -g "$lang" || true
+  done
 
   # Omamac configs
   section "Configuring Mac..."
