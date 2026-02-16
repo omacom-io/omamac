@@ -79,17 +79,7 @@ install() {
   echo "✓ Settings"
 
   defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
-  login_item Hammerspoon
   echo "✓ Hammerspoon"
-
-  login_item "Rectangle Pro"
-  echo "✓ Rectangle Pro"
-
-  login_item Raycast
-  echo "✓ Raycast"
-
-  login_item Tailscale
-  echo "✓ Tailscale"
 
   # Done!
   section "Finished!"
@@ -99,7 +89,10 @@ install() {
   echo "4. Manually import Rectangle Pro config from ~/.config/rectangle/RectangleProConfig.json (reveal hidden with Cmd + Shift + . in Finder)"
   echo "5. Manually import Raycast config from ~/.config/raycast/Raycast.rayconfig with pw: 12345678"
   echo "6. Remember to authenticate with: gh auth login"
-  echo "7. Then logout and back in for everything to take effect (Cmd + Shift + Q)"
+
+  open -a "Hammerspoon"
+  open -a "Rectangle Pro"
+  open -a "Raycast"
 }
 
 # Must use a function to prevent brew installs from stealing stdin
