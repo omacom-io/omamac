@@ -38,7 +38,7 @@ install() {
   git clone --depth 1 "$REPO" "$INSTALLER_DIR"
 
   section "Installing packages..."
-  packages=(tmux mise nvim opencode lazygit lazydocker starship zoxide eza jq gum gh tailscale libyaml)
+  packages=(tmux mise nvim opencode lazygit lazydocker starship zoxide eza jq gum gh libyaml)
   for pkg in $packages; do brew install "$pkg" || true; done
 
   # Install Alacritty manually from GitHub releases
@@ -54,7 +54,7 @@ install() {
 
   # Install secondary apps
   section "Installing apps..."
-  casks=(rectangle-pro hammerspoon font-jetbrains-mono-nerd-font 1password docker-desktop google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast zoom)
+  casks=(rectangle-pro hammerspoon font-jetbrains-mono-nerd-font 1password docker-desktop google-chrome dropbox spotify signal whatsapp obsidian claude-code raycast zoom tailscale)
   for cask in $casks; do brew install --cask "$cask" || true; done
 
   # Install basic dev envs
@@ -90,6 +90,7 @@ install() {
   open -a "Hammerspoon"
   open -a "Rectangle Pro"
   open -a "Raycast"
+  open -a "Tailscale"
 }
 
 # Must use a function to prevent brew installs from stealing stdin
