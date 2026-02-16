@@ -18,10 +18,6 @@ install() {
     echo -e "\n==> $1"
   }
 
-  login_item() {
-    osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"/Applications/$1.app\", hidden:false}" &>/dev/null
-  }
-
   section "Permission needed for setup..."
   sudo echo "✓ Granted"
 
@@ -89,6 +85,7 @@ install() {
   echo "4. Manually import Rectangle Pro config from ~/.config/rectangle/RectangleProConfig.json (reveal hidden with Cmd + Shift + . in Finder)"
   echo "5. Manually import Raycast config from ~/.config/raycast/Raycast.rayconfig with pw: 12345678"
   echo "6. Remember to authenticate with: gh auth login"
+  echo "7. Then logout and back in for everything to take effect (Cmd + Shift + Q)"
 
   open -a "Hammerspoon"
   open -a "Rectangle Pro"
