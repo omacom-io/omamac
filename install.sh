@@ -85,10 +85,7 @@ install() {
   login_item "Rectangle Pro"
   echo "✓ Rectangle Pro"
 
-  if [[ ! -f $HOME/Library/Preferences/com.raycast.macos.plist ]]; then
-    cp "$HOME/.config/raycast/config.plist" "$HOME/Library/Preferences/com.raycast.macos.plist"
-    login_item Raycast
-  fi
+  login_item Raycast
   echo "✓ Raycast"
 
   login_item Tailscale
