@@ -66,6 +66,9 @@ install() {
   section "Configuring Mac..."
   mkdir -p "$HOME/.config"
   cp -Rf "$INSTALLER_DIR/config/"* "$HOME/.config/"
+  for dir in "$TMPDIR/config"/*/; do
+    echo "✓ $(basename "$dir")"
+  done
 
   # Create hush file to suppress "Last login" message
   touch "$HOME/.hushlogin"
@@ -74,8 +77,8 @@ install() {
   . "$INSTALLER_DIR/install/mac.sh"
   echo "✓ Settings"
 
+  # Correct hammerspoon config location
   defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
-  echo "✓ Hammerspoon"
 
   # Done!
   section "Finished!"
