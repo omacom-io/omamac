@@ -36,20 +36,20 @@ curl -fsSL https://omamac.org/install | bash
 
 | Hotkey | Action |
 |--------|--------|
-| `Cmd + Ctrl + ←` | Left Half |
-| `Cmd + Ctrl + →` | Right Half |
-| `Cmd + Ctrl + ↑` | Top Left Quarter |
-| `Cmd + Ctrl + ↓` | Bottom Left Quarter |
-| `Cmd + Ctrl + Shift + ↑` | Top Right Quarter |
-| `Cmd + Ctrl + Shift + ↓` | Bottom Right Quarter |
-| `Cmd + Ctrl + ⌥ + ←` | First Fourth (Left) |
-| `Cmd + Ctrl + ⌥ + →` | Last Fourth (Right) |
-| `Cmd + Ctrl + ⌥ + ↑` | Top Left Eighth |
-| `Cmd + Ctrl + ⌥ + ↓` | Bottom Left Eighth |
-| `Cmd + Ctrl + ⌥ + Shift + ↑` | Top Right Eighth |
-| `Cmd + Ctrl + ⌥ + Shift + ↓` | Bottom Right Eighth |
-| `Cmd + Ctrl + Return` | Center Half |
-| `Cmd + Ctrl + ⌥ + Return` | Maximize |
+| `Cmd + ⌥ + ←` | Left Half |
+| `Cmd + ⌥ + →` | Right Half |
+| `Cmd + ⌥ + ↑` | Top Left Quarter |
+| `Cmd + ⌥ + ↓` | Bottom Left Quarter |
+| `Cmd + ⌥ + Shift + ↑` | Top Right Quarter |
+| `Cmd + ⌥ + Shift + ↓` | Bottom Right Quarter |
+| `Cmd + ⌥ + Ctrl + ←` | First Fourth (Left) |
+| `Cmd + ⌥ + Ctrl + →` | Last Fourth (Right) |
+| `Cmd + ⌥ + Ctrl + ↑` | Top Left Eighth |
+| `Cmd + ⌥ + Ctrl + ↓` | Bottom Left Eighth |
+| `Cmd + ⌥ + Ctrl + Shift + ↑` | Top Right Eighth |
+| `Cmd + ⌥ + Ctrl + Shift + ↓` | Bottom Right Eighth |
+| `Cmd + ⌥ + Return` | Center Half |
+| `Cmd + ⌥ + Ctrl + Return` | Maximize |
 
 ### Application Launching (Raycast)
 
