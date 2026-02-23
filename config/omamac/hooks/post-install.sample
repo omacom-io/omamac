@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run after Omamac finishes installation.
+# Copy to ~/.config/omamac/hooks/post-install and edit.

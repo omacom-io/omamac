@@ -18,6 +18,18 @@ install() {
     echo -e "\n==> $1"
   }
 
+  OMAMAC_HOOKS_DIR="$HOME/.config/omamac/hooks"
+
+  run_hook() {
+    local hook="$1"
+    local hook_path="$OMAMAC_HOOKS_DIR/$hook"
+
+    if [[ -f "$hook_path" ]]; then
+      section "Running $hook hook..."
+      bash "$hook_path"
+    fi
+  }
+
   section "Permission needed for setup..."
   sudo echo "✓ Granted"
 
@@ -109,6 +121,8 @@ install() {
   open -a "Rectangle Pro"
   open -a "Raycast"
   open -a "Tailscale"
+
+  run_hook post-install
 }
 
 # Must use a function to prevent brew installs from stealing stdin

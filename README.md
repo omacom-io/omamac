@@ -10,6 +10,14 @@ It's built on Rectangle Pro for window positioning, Hammerspoon for window navig
 curl -fsSL https://omamac.org/install | bash
 ```
 
+## Configuration
+
+Omamac follows the Omarchy convention: keep local overrides in `~/.config/omamac`.
+
+- Create `~/.config/omamac/hooks/post-install` for custom steps.
+- Optional apps can also be installed from `post-install` to mirror Omarchy's install menu approach.
+- See `config/omamac/hooks/post-install.sample` for an example.
+
 ## What it sets up
 
 - **Window Management**: Rectangle Pro, Hammerspoon, Raycast
@@ -116,4 +124,3 @@ You launch tmux with `t` in a new terminal (`Ctrl + Cmd + Return`).
 | Hotkey | Action |
 |--------|--------|
 | `Ctrl + Space q` | Reload config |
-
