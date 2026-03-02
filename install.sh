@@ -89,6 +89,16 @@ install() {
   touch "$HOME/.hushlogin"
   echo "✓ Hush login"
 
+  section "Configuring dock defaults..."
+  OMAMAC_CLEAR_DOCK=false
+  if gum confirm "Unpin all apps from the Dock?"; then
+    OMAMAC_CLEAR_DOCK=true
+    echo "✓ Dock apps will be unpinned"
+  else
+    echo "✓ Keeping existing Dock pinned apps"
+  fi
+  export OMAMAC_CLEAR_DOCK
+
   . "$INSTALLER_DIR/install/mac.sh"
   echo "✓ Settings"
 
