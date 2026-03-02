@@ -113,9 +113,8 @@ You launch tmux with `t` in a new terminal (`Ctrl + Cmd + Return`).
 | `v` | Begin selection |
 | `y` | Copy selection |
 
-**Other:**
+**Configuration:**
 
 | Hotkey | Action |
 |--------|--------|
-| `Ctrl + Space q` | Reload config |
-
+| `Ctrl + Space q` | Reload tmux config |
