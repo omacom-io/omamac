@@ -7,6 +7,10 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock tilesize -int 43
 defaults write com.apple.dock mru-spaces -bool false
 
+# Clear all apps and folders from the Dock
+defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-others -array
+
 # Normal (non-natural) scroll direction
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
