@@ -71,40 +71,42 @@ You launch tmux with `t` in a new terminal (`Ctrl + Cmd + Return`).
 
 | Hotkey | Action |
 |--------|--------|
-| `Ctrl + Cmd + PageUp` | Split horizontally |
-| `Ctrl + Cmd + PageDown` | Split vertically |
-| `Ctrl + Cmd + Home` | Split horizontally |
-| `Ctrl + Cmd + End` | Kill pane |
-| `Ctrl + Cmd + ←` | Focus left pane |
-| `Ctrl + Cmd + →` | Focus right pane |
-| `Ctrl + Cmd + ↑` | Focus up pane |
-| `Ctrl + Cmd + ↓` | Focus down pane |
-| `Ctrl + Cmd + Shift + ←` | Resize left |
-| `Ctrl + Cmd + Shift + ↓` | Resize down |
-| `Ctrl + Cmd + Shift + ↑` | Resize up |
-| `Ctrl + Cmd + Shift + →` | Resize right |
+| `Prefix + h` | Split horizontally (new pane below) |
+| `Prefix + v` | Split vertically (new pane to the right) |
+| `Prefix + x` | Kill pane |
+| `Ctrl + ⌥ + ←` | Focus left pane |
+| `Ctrl + ⌥ + →` | Focus right pane |
+| `Ctrl + ⌥ + ↑` | Focus up pane |
+| `Ctrl + ⌥ + ↓` | Focus down pane |
+| `Ctrl + ⌥ + Shift + ←` | Resize left |
+| `Ctrl + ⌥ + Shift + ↓` | Resize down |
+| `Ctrl + ⌥ + Shift + ↑` | Resize up |
+| `Ctrl + ⌥ + Shift + →` | Resize right |
 
 **Window Management:**
 
 | Hotkey | Action |
 |--------|--------|
-| `Ctrl + Shift + Home` | New window |
-| `Ctrl + Shift + End` | Kill window |
-| `Ctrl + Shift + PageUp` | Next window |
-| `Ctrl + Shift + PageDown` | Previous window |
-| `Ctrl + Space x` | Kill window |
-| `Ctrl + Space r` | Rename window |
+| `Prefix + c` | New window |
+| `Prefix + k` | Kill window |
+| `Prefix + r` | Rename window |
+| `⌥ + 1` … `⌥ + 9` | Jump to window N |
+| `⌥ + ←` | Previous window |
+| `⌥ + →` | Next window |
+| `⌥ + Shift + ←` | Swap with previous window |
+| `⌥ + Shift + →` | Swap with next window |
 
 **Session Management:**
 
 | Hotkey | Action |
 |--------|--------|
-| `Ctrl + Cmd + Shift + Home` | New session |
-| `Ctrl + Cmd + Shift + End` | Kill session |
-| `Ctrl + Cmd + Shift + PageUp` | Previous session |
-| `Ctrl + Cmd + Shift + PageDown` | Next session |
-| `Ctrl + Space R` | Rename session |
-| `Ctrl + Space X` | Kill session |
+| `Prefix + Shift + c` | New session |
+| `Prefix + Shift + k` | Kill session |
+| `Prefix + Shift + r` | Rename session |
+| `Prefix + Shift + p` | Previous session |
+| `Prefix + Shift + n` | Next session |
+| `⌥ + ↑` | Previous session |
+| `⌥ + ↓` | Next session |
 
 **Copy Mode (Vi):**
 
